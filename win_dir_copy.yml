@@ -1,0 +1,19 @@
+---
+- name: win_copy
+  hosts: all
+  become: false
+  gather_facts: false
+  vars:
+    source: "utils/"
+    destination: "C:\\ansible-utils\\"
+  tasks:
+    - name: test connection
+      ansible.windows.win_ping:
+    - name: create directory ansible-utils
+      ansible.windows.win_file:
+        path: "{{ destination }}" 
+        state: directory
+    - name: copy utils files
+      ansible.windows.win_copy:
+        src: "{{ source }}"
+        dest: "{{ destination }}"

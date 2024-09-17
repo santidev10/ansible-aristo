@@ -1,0 +1,13 @@
+---
+- name: win_copy module demo
+  hosts: all
+  become: false
+  gather_facts: false
+  vars:
+    source: "example.yml"
+    destination: "copy-example.yml"
+  tasks:
+    - name: copy report.txt
+      ansible.windows.win_copy:
+        src: "{{ source }}"
+        dest: "{{ destination }}"

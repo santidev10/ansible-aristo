@@ -1,0 +1,4 @@
+PowerShell -Command "Remove-Item -Path C:\ansible-utils\StartupLog.txt -ErrorAction SilentlyContinue"
+PowerShell -Command "Set-ExecutionPolicy Unrestricted" >> "C:\ansible-utils\StartupLog.txt" 2>&1
+PowerShell -Command "C:\ansible-utils\delete-temp-files.ps1" >> "C:\ansible-utils\StartupLog.txt" 2>&1
+
