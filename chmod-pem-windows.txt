@@ -1,0 +1,4 @@
+PS C:\Users\SG110592\Downloads> icacls proget-keypair.pem /reset
+PS C:\Users\SG110592\Downloads> icacls proget-keypair.pem /grant:r "$($env:username):(r)"
+PS C:\Users\SG110592\Downloads> icacls proget-keypair.pem  /inheritance:r
+
